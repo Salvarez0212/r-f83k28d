@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <span className="value">0</span>
-        <button id="inc">Incrementa</button>
-      </div>
-    );
-  }
-}
+const App = () => {
+  const [counter, setCounter] = useState(0);
+  const handleIncrement = () => {
+    setCounter((prevState) => (prevState += 1));
+  };
+
+  return (
+    <div>
+      <span className="value">{counter}</span>
+      <button id="inc" onClick={handleIncrement}>
+        Incrementa
+      </button>
+    </div>
+  );
+};
 
 export default App;
